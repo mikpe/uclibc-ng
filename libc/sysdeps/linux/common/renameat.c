@@ -11,6 +11,8 @@
 #include <sysdep.h>
 #include <errno.h>
 
+#if defined(__NR_renameat) || defined(__NR_renameat2)
+
 int
 renameat (int oldfd, const char *old, int newfd, const char *new)
 {
@@ -21,3 +23,5 @@ renameat (int oldfd, const char *old, int newfd, const char *new)
 #endif
 }
 libc_hidden_def (renameat)
+
+#endif
