@@ -23,6 +23,8 @@
 #include "kernel-posix-cpu-timers.h"
 
 
+#ifdef __NR_clock_gettime
+
 #define SYSCALL_GETTIME \
   retval = INLINE_SYSCALL (clock_gettime, 2, clock_id, tp); \
   break
@@ -85,3 +87,5 @@ clock_gettime (clockid_t clock_id, struct timespec *tp)
 
   return retval;
 }
+
+#endif /* ifdef __NR_clock_gettime */
