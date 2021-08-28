@@ -142,8 +142,8 @@ config TARGET_sparc64
 config TARGET_tile
 	bool "tile"
 
-#config TARGET_v850
-#	bool "v850 (BROKEN)"
+config TARGET_v850
+	bool "v850"
 
 config TARGET_x86_64
 	bool "x86_64"
