@@ -20,3 +20,5 @@
 #APP
 	
 	.ident	"GCC: (GNU) 3.3.2"
+
+.section .note.GNU-stack,"",%progbits
