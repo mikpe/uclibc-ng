@@ -30,6 +30,8 @@
 #include "internal/time64_helpers.h"
 #endif
 
+#if defined(__NR_clock_gettime64) || defined(__NR_clock_gettime)
+
 #if defined(__UCLIBC_USE_TIME64__) && defined(__NR_clock_gettime64)
 #define SYSCALL_GETTIME           \
   {                               \
@@ -115,3 +117,5 @@ clock_gettime (clockid_t clock_id, struct timespec *tp)
   return __libc_clock_gettime(clock_id, tp);
 #endif
 }
+
+#endif /* defined(__NR_clock_gettime64) || defined(__NR_clock_gettime) */
