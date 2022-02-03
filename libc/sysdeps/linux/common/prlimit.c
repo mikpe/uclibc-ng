@@ -18,6 +18,8 @@
 #include <sys/resource.h>
 #include <sysdep.h>
 
+#ifdef __NR_prlimit64
+
 int
 prlimit (__pid_t pid, enum __rlimit_resource resource,
 	     const struct rlimit *new_rlimit, struct rlimit *old_rlimit)
@@ -25,3 +27,5 @@ prlimit (__pid_t pid, enum __rlimit_resource resource,
   return INLINE_SYSCALL (prlimit64, 4, pid, resource, new_rlimit,
 			      old_rlimit);
 }
+
+#endif
