@@ -491,7 +491,7 @@
 #endif
 
 /* prlimit64 is available in 2.6.36.  */
-#if __LINUX_KERNEL_VERSION >= 0x020624
+#if __LINUX_KERNEL_VERSION >= 0x020624 && !defined __frv__
 # define __ASSUME_PRLIMIT64    1
 #endif
 
