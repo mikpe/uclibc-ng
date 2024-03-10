@@ -251,7 +251,7 @@ unsigned int __dl_parse_dynamic_info(ElfW(Dyn) *dpnt, unsigned long dynamic_info
 		    (((X) & PF_X) ? PROT_EXEC : 0))
 
 /* FDPIC ABI don't use relative relocations */
-#if !defined(__FDPIC__)
+#if !defined(__FDPIC__) && !defined(__FRV_FDPIC__)
 /* Apply relocations in DT_RELR format */
 #define DL_DO_RELOCATE_RELR(load_addr, relr_start, relr_end) \
 		do { \
