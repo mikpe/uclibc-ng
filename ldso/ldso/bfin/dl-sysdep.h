@@ -33,6 +33,10 @@
 
 extern int _dl_linux_resolve(void) __attribute__((__visibility__("hidden")));
 
+#ifndef SEND_STDERR
+#define SEND_STDERR(X) /*empty*/
+#endif
+
 #undef SEND_EARLY_STDERR
 #define SEND_EARLY_STDERR(S)			\
     do {								\
