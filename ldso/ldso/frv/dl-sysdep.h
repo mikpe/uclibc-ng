@@ -32,6 +32,10 @@
 
 extern int _dl_linux_resolve(void) __attribute__((__visibility__("hidden")));
 
+#ifndef SEND_STDERR
+#define SEND_STDERR(X) (void)(X)
+#endif
+
 /* We must force strings used early in the bootstrap into the data
    segment, such that they are referenced with GOTOFF instead of
    GPREL, because GPREL needs the GOT to have already been
